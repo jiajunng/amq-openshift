@@ -1,5 +1,5 @@
 # amq-openshift
-Deploying simple AMQ on OpenShift v4.
+Deploying simple AMQ v7.5 on OpenShift v4.
 
 # Basic Instructions
 - Create AMQ operator via Operators -> OperatorHub
