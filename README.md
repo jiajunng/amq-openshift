@@ -16,8 +16,12 @@ Deploying simple AMQ on OpenShift v4.
 
 - To send message:
 
-```mvn exec:java -Dexec.mainClass="com.redhat.demo.App" -D broker.url="amqps://amqp-amq-demo.apps.cluster-sgjj-9804.sgjj-9804.example.opentlc.com:443?transport.trustStoreLocation=client.ts&transport.trustStorePassword=password&transport.verifyHost=false" -Dsend.queue=MyQueue0 -Dsend.msg=sslHello -Dsend.mode=SEND```
+```
+mvn exec:java -Dexec.mainClass="com.redhat.demo.App" -D broker.url="amqps://amqp-amq-demo.apps.cluster-sgjj-9804.sgjj-9804.example.opentlc.com:443?transport.trustStoreLocation=client.ts&transport.trustStorePassword=password&transport.verifyHost=false" -Dsend.queue=MyQueue0 -Dsend.msg=sslHello -Dsend.mode=SEND
+```
 
 - To view received message:
 
-```mvn exec:java -Dexec.mainClass="com.redhat.demo.App" -D broker.url="amqps://amqp-amq-demo.apps.cluster-sgjj-9804.sgjj-9804.example.opentlc.com:443?transport.trustStoreLocation=client.ts&transport.trustStorePassword=password&transport.verifyHost=false" -Dsend.queue=MyQueue0  -Dsend.mode=RECV
+```
+mvn exec:java -Dexec.mainClass="com.redhat.demo.App" -D broker.url="amqps://amqp-amq-demo.apps.cluster-sgjj-9804.sgjj-9804.example.opentlc.com:443?transport.trustStoreLocation=client.ts&transport.trustStorePassword=password&transport.verifyHost=false" -Dsend.queue=MyQueue0  -Dsend.mode=RECV
+```
