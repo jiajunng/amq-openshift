@@ -1,5 +1,5 @@
 # amq-openshift-demo
-Deploying simple AMQ v7.5 on OpenShift v4.
+Deploying simple AMQ v7.5 on OpenShift v4. Connection to the broker is done via Route.
 
 # Basic Instructions
 - Create AMQ operator via Operators -> OperatorHub
