@@ -23,7 +23,7 @@ spec:
       verifyHost: false
   deploymentPlan:
     image: 'registry.redhat.io/amq7/amq-broker:7.5'
-    size: 1
+    size: 2
 ```
 
 - Generate SSL credentials as per [official docs](https://access.redhat.com/documentation/en-us/red_hat_amq/7.5/html-single/deploying_amq_broker_on_openshift/index#broker-operator-acceptor-configurationbroker-ocp):
