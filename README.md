@@ -1,4 +1,4 @@
-# amq-openshift
+# amq-openshift-demo
 Deploying simple AMQ v7.5 on OpenShift v4.
 
 # Basic Instructions
@@ -78,13 +78,13 @@ spec:
 
 - Simple Java client can be found [https://github.com/jiajunng/simple-amq-client.git](https://github.com/jiajunng/simple-amq-client.git)
 
-- To send message:
+- To send message (Edit the OpenShift route and the location of client.ts):
 
 ```
 mvn exec:java -Dexec.mainClass="com.redhat.demo.App" -D broker.url="amqps://amqp-amq-demo.apps.cluster-sgjj-9804.sgjj-9804.example.opentlc.com:443?transport.trustStoreLocation=client.ts&transport.trustStorePassword=password&transport.verifyHost=false" -Dsend.queue=MyQueue0 -Dsend.msg=sslHello -Dsend.mode=SEND
 ```
 
-- To view received message:
+- To view received message (Edit the OpenShift route and the location of client.ts):
 
 ```
 mvn exec:java -Dexec.mainClass="com.redhat.demo.App" -D broker.url="amqps://amqp-amq-demo.apps.cluster-sgjj-9804.sgjj-9804.example.opentlc.com:443?transport.trustStoreLocation=client.ts&transport.trustStorePassword=password&transport.verifyHost=false" -Dsend.queue=MyQueue0  -Dsend.mode=RECV
