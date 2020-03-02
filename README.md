@@ -26,7 +26,16 @@ spec:
     size: 1
 ```
 
-- Generate SSL credentials as per [instructions](https://access.redhat.com/documentation/en-us/red_hat_amq/7.5/html-single/deploying_amq_broker_on_openshift/index#broker-operator-acceptor-configurationbroker-ocp) 
+- Generate SSL credentials as per [official docs](https://access.redhat.com/documentation/en-us/red_hat_amq/7.5/html-single/deploying_amq_broker_on_openshift/index#broker-operator-acceptor-configurationbroker-ocp):
+
+```
+# keytool -genkey -alias broker -keyalg RSA -keystore broker.ks
+# keytool -export -alias broker -keystore broker.ks -file broker_cert
+# keytool -genkey -alias client -keyalg RSA -keystore client.ks
+# keytool -import -alias broker -keystore client.ts -file broker_cert
+# oc secrets new amq-app-secret broker.ks client.ts
+# oc secrets add sa/amq-broker-operator secret/amq-app-secret
+```
 
 - Create Create ActiveMQArtemisAddress instance as per amq-address.yaml:
 
@@ -66,6 +75,8 @@ spec:
 ```
 
 - Expose the amqp service and ensure that the tls termination is passthrough
+
+- Simple Java client can be found [https://github.com/jiajunng/simple-amq-client.git](https://github.com/jiajunng/simple-amq-client.git)
 
 - To send message:
 
