@@ -19,7 +19,7 @@ spec:
       port: 5671
       protocols: amqp
       sslEnabled: true
-      sslSecret: ex-aao-amqp-secret
+      sslSecret: amq-app-secret
       verifyHost: false
   deploymentPlan:
     image: 'registry.redhat.io/amq7/amq-broker:7.5'
